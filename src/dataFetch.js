@@ -56,7 +56,6 @@ getPlayerStats = async (name) => {
     try {
         const resp = await axios.get(`${PLAYERID_URL}&name=${encodeURI(name)}`);
 
-        // resp.then((val)=>{console.log(val)});
         const pid = resp.data.data[0].pid;
         const playerStat = await axios.get(`${PLAYERSTAT_URL}&pid=${pid}`);
 

@@ -16,7 +16,6 @@ const cheerio = require('cheerio');
 const PAGE_URL = 'https://www.iplt20.com/points-table/2020';
 
 sendLiveData = (data, channel) => {
-    console.log('livedata');
     const liveEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle(data['score'])
@@ -44,7 +43,6 @@ sendStandings = (channel) => {
                 $('.standings-table td').each((i, el) => {
                     const item = $(el).text();
                     if (i % 12 == 0) {
-                        console.log(i);
                         row = [];
                         // row.push(item);
                     } else if (i % 12 == 11) {
@@ -114,6 +112,21 @@ client.on('ready', () => {
     console.log(`${client.user.username} has joined`);
 });
 
+formateDDMMYY = (date) => {
+    let res = '';
+    date = new Date(date);
+    res +=
+        date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+    return res;
+};
+
+formatTime = (date) => {
+    let res = '';
+    date = new Date(date);
+    res += date.getHours() + ':' + date.getMinutes();
+    return res;
+};
+
 sendScheduleMatch = (matches, channel) => {
     let fields = [];
     if (matches.length > 6) {
@@ -122,16 +135,12 @@ sendScheduleMatch = (matches, channel) => {
     for (match of matches) {
         fields.push({
             name: match['team-1'],
-            value: `Date: ${new Date(
-                new Date(match['dateTimeGMT']) + 330
-            ).toLocaleDateString('en-US', 'Asia/Kolkata')}`,
+            value: formateDDMMYY(match['dateTimeGMT']),
             inline: true,
         });
         fields.push({
             name: match['team-2'],
-            value: `Time: ${new Date(
-                new Date(match['dateTimeGMT']) + 330
-            ).toLocaleTimeString('en-US', 'Asia/Kolkata')}`,
+            value: formateTime(match['dateTimeGMT']),
             inline: true,
         });
         fields.push({ name: '\u200B', value: '\u200B' });
@@ -151,7 +160,6 @@ sendScheduleMatch = (matches, channel) => {
 
 sendPlayerStats = (stats, channel) => {
     try {
-        console.log(stats['imageURL']);
         const matchEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle(stats['fullName'])
@@ -191,7 +199,6 @@ client.on('message', (message) => {
             .trim()
             .substring(PREFIX.length)
             .split(/\s+/);
-        console.log(CMD_NAME, args);
 
         if (CMD_NAME == 'upcoming') {
             let upcommingMatch = getUpcommingMatch();
@@ -211,7 +218,6 @@ client.on('message', (message) => {
                 );
                 return;
             }
-            console.log(playerStat);
             playerStat.then((value) => {
                 sendPlayerStats(value, message.channel);
             });
