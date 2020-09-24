@@ -12,7 +12,7 @@ Every command given to the bot should be prefixed by `$`.
 
 ```
 IPL Notifs Commands:-  
-upcoming:      Schedule of all upcoming IPL matched(at most 6)
+upcoming:      Schedule of all upcoming IPL matches(at most 6)
 live:          Live Score
 standings:     Current Standings
 player:        Player Info e.g $player Patt Cummins
