@@ -112,19 +112,19 @@ client.on('ready', () => {
     console.log(`${client.user.username} has joined`);
 });
 
-formateDDMMYY = (date) => {
+formatDDMMYY = (date) => {
     let res = '';
     date = new Date(date);
     res +=
         date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-    return res;
+    return 'Date: ' + res;
 };
 
 formatTime = (date) => {
     let res = '';
     date = new Date(date);
     res += date.getHours() + ':' + date.getMinutes();
-    return res;
+    return 'Time: ' + res;
 };
 
 sendScheduleMatch = (matches, channel) => {
@@ -135,12 +135,12 @@ sendScheduleMatch = (matches, channel) => {
     for (match of matches) {
         fields.push({
             name: match['team-1'],
-            value: formateDDMMYY(match['dateTimeGMT']),
+            value: formatDDMMYY(match['dateTimeGMT']),
             inline: true,
         });
         fields.push({
             name: match['team-2'],
-            value: formateTime(match['dateTimeGMT']),
+            value: formatTime(match['dateTimeGMT']),
             inline: true,
         });
         fields.push({ name: '\u200B', value: '\u200B' });
