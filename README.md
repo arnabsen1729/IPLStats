@@ -1,6 +1,6 @@
-## IPL Stats (Discord Bot)
-
-<hr>
+# IPL Stats (Discord Bot)
+[![Follow me](https://img.shields.io/github/followers/arnabsen1729?label=follow%20me&style=for-the-badge)](https://github.com/arnabsen1729)
+[![Star my repo](https://img.shields.io/github/stars/arnabsen1729/IPLStats?style=for-the-badge)](https://github.com/arnabsen1729/IPLStats)
 
 ## Description
 
