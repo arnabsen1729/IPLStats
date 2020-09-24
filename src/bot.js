@@ -123,7 +123,10 @@ formatDDMMYY = (date) => {
 formatTime = (date) => {
     let res = '';
     date = new Date(date);
-    res += date.getHours() + ':' + date.getMinutes();
+    mins = date.getMinutes() + 30;
+    hour = date.getHours() + mins / 60 + 5;
+    mins = mins % 60;
+    res += hour + ':' + mins.toString().padStart(2, '0');
     return 'Time: ' + res;
 };
 
