@@ -124,7 +124,7 @@ formatTime = (date) => {
     let res = '';
     date = new Date(date);
     mins = date.getMinutes() + 30;
-    hour = date.getHours() + mins / 60 + 5;
+    hour = date.getHours() + Math.floor(mins / 60) + 5;
     mins = mins % 60;
     res += hour + ':' + mins.toString().padStart(2, '0');
     return 'Time: ' + res;
