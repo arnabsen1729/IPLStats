@@ -79,7 +79,7 @@ sendStandings = (channel) => {
                 }
                 msg += '\n';
                 for (let i = 0; i < headers.length; i++) {
-                    msg += '-'.repeat(SPACE + 2);
+                    msg += '-'.repeat(SPACE + 3);
                 }
                 msg += '\n|';
                 for (let i = 0; i < 8; i++) {
@@ -161,7 +161,7 @@ sendPlayerStats = (stats, channel) => {
             .addFields([
                 {
                     name: 'Teams',
-                    value: stats['majorTeams'].split(',').slice(0, 3).join(','),
+                    value: stats['majorTeams'].split(','),
                 },
                 { name: 'Playing Role', value: stats['playingRole'] },
                 {
