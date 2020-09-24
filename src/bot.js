@@ -122,18 +122,16 @@ sendScheduleMatch = (matches, channel) => {
     for (match of matches) {
         fields.push({
             name: match['team-1'],
-            value: `Date: ${new Date(match['dateTimeGMT']).toLocaleDateString(
-                'en-US',
-                'Asia/Kolkata'
-            )}`,
+            value: `Date: ${new Date(
+                new Date(match['dateTimeGMT']) + 330
+            ).toLocaleDateString('en-US', 'Asia/Kolkata')}`,
             inline: true,
         });
         fields.push({
             name: match['team-2'],
-            value: `Time: ${new Date(match['dateTimeGMT']).toLocaleTimeString(
-                'en-US',
-                'Asia/Kolkata'
-            )}`,
+            value: `Time: ${new Date(
+                new Date(match['dateTimeGMT']) + 330
+            ).toLocaleTimeString('en-US', 'Asia/Kolkata')}`,
             inline: true,
         });
         fields.push({ name: '\u200B', value: '\u200B' });
