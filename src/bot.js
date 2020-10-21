@@ -16,10 +16,16 @@ const cheerio = require('cheerio');
 const PAGE_URL = 'https://www.iplt20.com/points-table/2020';
 
 sendLiveData = (data, channel) => {
+    var title = data['score']
+    var score = data['stat']
+    if(typeof(title) ===  'undefined' || typeof(score) ==='undefined'){
+        title="Oops!! Please try again after sometime"
+        score="Perhaps there is no live game!! Or wait a couple of minutes"
+    }
     const liveEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
-        .setTitle(data['score'])
-        .setDescription(data['stat'])
+        .setTitle(title)
+        .setDescription(score)
         .setURL('https://www.iplt20.com/')
         .setThumbnail('https://i.imgur.com/WdkS5wH.jpg')
         .setTimestamp();
