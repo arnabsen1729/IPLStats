@@ -1,7 +1,8 @@
-# IPL Stats (Discord Bot)
-[![Follow me](https://img.shields.io/github/followers/arnabsen1729?label=follow%20me&style=for-the-badge)](https://github.com/arnabsen1729)
-[![Star my repo](https://img.shields.io/github/stars/arnabsen1729/IPLStats?style=for-the-badge)](https://github.com/arnabsen1729/IPLStats)
+<div align="center"><h1>IPL Stats (Discord Bot)</h1></div>
 
+
+[![Follow me](https://img.shields.io/github/followers/arnabsen1729?label=follow%20me&style=for-the-badge)](https://github.com/arnabsen1729)
+![IPLStats](https://socialify.git.ci/arnabsen1729/IPLStats/image?description=1&descriptionEditable=Discord%20bot%20for%20IPL%20statistics%2C%20standings%20and%20player%20information&font=Rokkitt&forks=1&language=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark)
 ## Description
 
 This bot will give quick and brief updates regarding the IPL 2020. It can display the standings, schedule, live scores, and player stats.
