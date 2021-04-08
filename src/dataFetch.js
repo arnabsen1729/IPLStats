@@ -20,6 +20,25 @@ const TEAMS = [
     'Sunrisers Hyderabad',
 ];
 
+getSchedule = async () => {
+    let IPLSchedule = [];
+    const resp = await axios.get(`${MATHCES_URL}`);
+    const fullSchedule = resp.data.matches;
+    // console.log(fullSchedule);
+    for (match of fullSchedule) {
+        // console.log(match);
+        if (
+            TEAMS.includes(match['team-1']) &&
+            TEAMS.includes(match['team-2'])
+        ) {
+            IPLSchedule.push(match);
+        }
+    }
+    console.log(IPLSchedule);
+    // fs.writeFile('data.json', JSON.stringify(IPLSchedule), 'utf8');
+    // console.log(IPLSchedule);
+};
+
 getUpcommingMatch = () => {
     let IPLMatches = [];
     for (match of schedule) {
@@ -68,3 +87,4 @@ getPlayerStats = async (name) => {
 
 // getPlayerStats('Sachin Rana')
 module.exports = { getUpcommingMatch, getPlayerStats, getLiveData };
+// getSchedule();

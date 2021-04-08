@@ -13,14 +13,14 @@ const {
 const request = require('request');
 const cheerio = require('cheerio');
 
-const PAGE_URL = 'https://www.iplt20.com/points-table/2020';
+const PAGE_URL = 'https://www.iplt20.com/points-table/men/2021';
 
 sendLiveData = (data, channel) => {
-    var title = data['score']
-    var score = data['stat']
-    if(typeof(title) ===  'undefined' || typeof(score) ==='undefined'){
-        title="Oops!! Please try again after sometime"
-        score="Perhaps there is no live game!! Or wait a couple of minutes"
+    var title = data['score'];
+    var score = data['stat'];
+    if (typeof title === 'undefined' || typeof score === 'undefined') {
+        title = 'Oops!! Please try again after sometime';
+        score = 'Perhaps there is no live game!! Or wait a couple of minutes';
     }
     const liveEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
@@ -73,7 +73,7 @@ sendStandings = (channel) => {
                     'Points',
                 ];
                 const SPACE = 6;
-                let msg = '```|';
+                let msg = '```md\n|';
                 for (let i = 0; i < headers.length; i++) {
                     msg +=
                         '  ' +
@@ -126,13 +126,14 @@ formatDDMMYY = (date) => {
     return 'Date: ' + res;
 };
 
-formatTime = (date) => {
+formatTime = (dateTime) => {
     let res = '';
-    date = new Date(date);
-    mins = date.getMinutes() + 30;
-    hour = date.getHours() + Math.floor(mins / 60) + 5;
+    const date = new Date(dateTime);
+    let mins = date.getMinutes() + 30;
+    let hour = date.getHours() + Math.floor(mins / 60) + 5;
     mins = mins % 60;
     res += hour + ':' + mins.toString().padStart(2, '0');
+    // console.log(date, hour, mins, date.getMinutes(), date.getHours());
     return 'Time: ' + res;
 };
 
@@ -233,7 +234,7 @@ client.on('message', (message) => {
             return;
         } else if (CMD_NAME === 'help') {
             message.channel.send(
-                '```IPL Notifs Commands:-  \nupcoming:  \tSchedule of all upcoming IPL matches(at most 6)\nlive:  \t\tLive Score\nstandings: \tCurrent Standings\nplayer:    \tPlayer Info e.g $player Patt Cummins```'
+                '**IPL Notifs Commands** \n**$upcoming**  \tSchedule of all upcoming IPL matches(at most 6)\n**$live**  \t\t\t\tLive Score\n**$standings**  \tCurrent Standings\n**$player**     \t\tPlayer Info e.g $player Patt Cummins\n\n _Creator: https://github.com/arnabsen1729_'
             );
             return;
         } else if (CMD_NAME === 'standings') {
