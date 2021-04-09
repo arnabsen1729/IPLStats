@@ -10,5 +10,15 @@
     "API_KEY":{
       "description": "CrickApi API key to get live updates"
     }
-  }
+  },
+  "formation": {
+    "web": {
+      "quantity": 0,
+      "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
 }
