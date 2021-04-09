@@ -12,6 +12,26 @@
 
 This bot will give quick and brief updates regarding the IPL 2020. It can display the standings, schedule, live scores, and player stats.
 
+## Deploy your discord bot
+
+**STEP 1:** Create a Discord Bot Account. This bot doesn't need any extra permissions, just a bot role is enough. For a guide refer to [this](https://realpython.com/how-to-make-a-discord-bot-python/#creating-an-application).
+
+**STEP 2:** Create a Cricapi account, and get the API Key.
+
+> Don't share the API keys and the Discord BOT TOKEN with anyone. Keep them in the .env file.
+
+**STEP 3(Optional):** If you have node installed then you can run the app locally and test it out once, for that just do these
+
+```bash
+$ npm i # to install node modules
+$ npm run dev # will start the bot and your bot will be online
+```
+
+**STEP 4:** Click on the deploy to heroku button. Make sure you configure the API keys in Heroku Settings as well.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/arnabsen1729/IPLStats)
+
+
 ## Usage
 
 Every command given to the bot should be prefixed by `$`.

@@ -1,0 +1,14 @@
+{
+  "name": "IPL Stats discord bot",
+  "description": "Discord bot to get live updates, standings, and player stats",
+  "repository": "https://github.com/arnabsen1729/IPLStats",
+  "keywords": ["node", "discordjs", "bot"],
+  "env": {
+    "DISCORD_BOT_TOKEN": {
+      "description": "The API key for the bot recevied during App registration"
+    },
+    "API_KEY":{
+      "description": "CrickApi API key to get live updates"
+    }
+  }
+}
