@@ -49,7 +49,7 @@ These are the previews:-
 
 `$help`
 
-![help](assets/ss/upcoming.png)
+![help](assets/ss/help.png)
 
 `$upcoming`
 
