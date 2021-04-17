@@ -14,6 +14,10 @@ This bot will give quick and brief updates regarding the IPL 2020. It can displa
 
 ## Deploy your discord bot
 
+First you need to create a **CricApi account** and get the API key. Go to https://www.cricapi.com/ website, register for the free plan. 
+
+>The free plan gives 100 requests per day. But, since the schedule is prefetched, and the standings are scraped from the official IPL website, the number of requests are reduced.
+
 **STEP 1:** Create a Discord Bot Account. This bot doesn't need any extra permissions, just a bot role is enough. For a guide refer to [this](https://realpython.com/how-to-make-a-discord-bot-python/#creating-an-application).
 
 **STEP 2:** Create a Cricapi account, and get the API Key.
